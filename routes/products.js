@@ -24,4 +24,12 @@ router.get('/', (req,res) => {
     res.send(products);
 });
 
+router.get('/:ID',(req,res) => {
+   const { ID } = req.params;
+   const IDvl = parseInt(ID);
+   const product = products.find((product) => product.ID = IDvl);
+
+   res.send(product);
+})
+
 export default router
